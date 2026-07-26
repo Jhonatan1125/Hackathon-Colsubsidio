@@ -98,7 +98,7 @@ Ingresa a nuestro entorno de pruebas haciendo clic en el siguiente enlace:
 https://jhonatan1125.github.io/colsubsidio-seguros/
 
 Inicia la conversación:
-Una vez en la página, dirígete a la esquina inferior derecha y selecciona el botón flotante de chat (icono rojo de mensaje).
+Una vez en la página, dirígete a la esquina inferior derecha y selecciona el botón flotante de chat (icono azul de mensaje).
 
 Interactúa con el asistente:
 Se desplegará la ventana del Asistente Colsubsidio (SoterIA). Acepta los términos y condiciones iniciales para habilitar el perfilamiento inteligente.
