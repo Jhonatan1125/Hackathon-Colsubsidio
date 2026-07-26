@@ -95,7 +95,7 @@ Para interactuar con SoterIA y explorar de primera mano los flujos de atención 
 
 Accede a la plataforma web:
 Ingresa a nuestro entorno de pruebas haciendo clic en el siguiente enlace:
-🔗 Portal SoterIA - Seguros Colsubsidio
+https://jhonatan1125.github.io/colsubsidio-seguros/
 
 Inicia la conversación:
 Una vez en la página, dirígete a la esquina inferior derecha y selecciona el botón flotante de chat (icono rojo de mensaje).
