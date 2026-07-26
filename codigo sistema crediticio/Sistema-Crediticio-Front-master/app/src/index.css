@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colsubsidio Brand Colors — refined */
+  --color-amarillo: #FFD000;
+  --color-amarillo-80: #FFD733;
+  --color-amarillo-60: #FFDE66;
+  --color-amarillo-40: #FFE699;
+
+  --color-azul: #0067B1;
+  --color-azul-80: #3385BF;
+  --color-azul-60: #66A3CC;
+  --color-azul-40: #99C2DD;
+
+  --color-navy: #003D6B;
+  --color-navy-80: #004D85;
+  --color-navy-60: #005E9E;
+
+  --color-grafito: #575756;
+  --color-grafito-60: #7A7A79;
+  --color-grafito-40: #9D9D9C;
+  --color-grafito-20: #C0C0C0;
+  --color-grafito-10: #E5E5E5;
+
+  /* Semantic aliases */
+  --color-primary: var(--color-amarillo);
+  --color-secondary: var(--color-azul);
+  --color-text: var(--color-grafito);
+  --color-text-muted: var(--color-grafito-60);
+  --color-border: var(--color-grafito-20);
+  --color-bg: #F5F6F7;
+  --color-surface: #FFFFFF;
+
+  /* Status colors */
+  --color-success: #0D9668;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+
+  /* Typography */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Shadows — flatter, more institutional */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-focus: 0 0 0 2px var(--color-azul-40);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-navy);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Focus visible for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--color-azul);
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    box-shadow: var(--shadow-card);
+    padding: 20px;
+  }
+
+  .page-container {
+    padding: 28px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-grafito-60);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .data-value {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Pipeline signature element */
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .pipeline-stage {
+    flex: 1;
+    min-width: 0;
+    padding: 16px 20px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    position: relative;
+    transition: border-color 0.2s ease;
+  }
+
+  .pipeline-stage:first-child {
+    border-radius: 6px 0 0 6px;
+  }
+
+  .pipeline-stage:last-child {
+    border-radius: 0 6px 6px 0;
+  }
+
+  .pipeline-stage:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 2px;
+    background: var(--color-azul-40);
+    z-index: 1;
+  }
+
+  .pipeline-stage:hover {
+    border-color: var(--color-azul-40);
+  }
+
+  .pipeline-number {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    line-height: 1;
+  }
+
+  .pipeline-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--color-grafito-60);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  .pipeline-sublabel {
+    font-size: 0.75rem;
+    color: var(--color-grafito-40);
+    margin-top: 2px;
+  }
+}
+
+@layer utilities {
+  .text-currency {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
