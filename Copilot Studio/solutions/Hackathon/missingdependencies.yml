@@ -1,0 +1,12 @@
+MissingDependencies:
+  MissingDependency:
+    Required:
+      '@type': 29
+      '@displayName': ML_ConsultarSerie
+      '@solution': Active
+      '@id': '{ff1b138d-7386-9ce2-acc0-3d893d2838ff}'
+    Dependent:
+      '@type': botcomponent_workflow
+      '@displayName': botcomponentid.schemaname=jh_Hackathon.topic.Identificarse,workflowid.workflowid=ff1b138d-7386-9ce2-acc0-3d893d2838ff
+      '@id.botcomponentid.schemaname': jh_Hackathon.topic.Identificarse
+      '@id.workflowid.workflowid': ff1b138d-7386-9ce2-acc0-3d893d2838ff

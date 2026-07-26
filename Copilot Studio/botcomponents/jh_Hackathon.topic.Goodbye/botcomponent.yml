@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Goodbye
+  componenttype: 9
+  description: Este tema se desencadena cuando el usuario se despide. De forma predeterminada, no finaliza la conversación. Si desea finalizar la conversación cuando el usuario se despida, puede agregar una acción "Fin de la conversación" a este tema o redirigir al tema del sistema "Fin de la conversación".
+  iscustomizable: 0
+  name: Despedida
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

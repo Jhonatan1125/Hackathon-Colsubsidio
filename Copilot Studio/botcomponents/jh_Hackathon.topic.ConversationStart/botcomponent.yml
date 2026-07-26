@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.ConversationStart
+  componenttype: 9
+  description: Este tema del sistema se desencadena cuando el agente recibe una actividad que indica el inicio de una nueva conversación. Si no desea que el agente inicie la conversación, deshabilite este tema.
+  iscustomizable: 0
+  name: Inicio de la conversación
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

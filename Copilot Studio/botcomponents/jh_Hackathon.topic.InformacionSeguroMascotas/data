@@ -1,0 +1,64 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Este tema se activa después del saludo cuando identificas que animal, sea perro o gato, y el usuario manifiesta interés en conocer opciones de protección para su mascota.
+
+  El objetivo es identificar qué tipo de necesidad tiene respecto a su mascota para orientarlo hacia la solución más adecuada.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: Question
+      id: question_QIOBun
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Respuesta
+      prompt: |-
+        ¡Claro que sí! 🐾
+        Me encantaría ayudarte a encontrar la mejor protección para tu peludito.
+        ¿Dé cuál de nuestros servicios quieres que hablemos mi bro?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: 🐶 Seguro para Mascotas
+              displayName: 🐶 Seguro para Mascotas
+
+            - id: 🚑 Asistencia Veterinaria para Mascotas
+              displayName: 🚑 Asistencia Veterinaria para Mascotas
+
+            - id: 🩺 Medicina Prepagada para Mascotas
+              displayName: 🩺 Medicina Prepagada para Mascotas
+
+            - id: 🤔 No estoy seguro, necesito orientación
+              displayName: 🤔 No estoy seguro, necesito orientación
+
+    - kind: ConditionGroup
+      id: conditionGroup_JN9IUT
+      conditions:
+        - id: conditionItem_qXJeBD
+          condition: =Topic.Respuesta = 'jh_Hackathon.topic.InformacionSeguroMascotas.main.question_QIOBun'.'🚑 Asistencia Veterinaria para Mascotas'
+
+        - id: conditionItem_WqIgs3
+          condition: =Topic.Respuesta = 'jh_Hackathon.topic.InformacionSeguroMascotas.main.question_QIOBun'.'🩺 Medicina Prepagada para Mascotas'
+
+        - id: conditionItem_Gg5SUK
+          condition: =Topic.Respuesta = 'jh_Hackathon.topic.InformacionSeguroMascotas.main.question_QIOBun'.'🐶 Seguro para Mascotas'
+
+        - id: conditionItem_ksZwfk
+          condition: =Topic.Respuesta = 'jh_Hackathon.topic.InformacionSeguroMascotas.main.question_QIOBun'.'🤔 No estoy seguro, necesito orientación'
+          actions:
+            - kind: SendActivity
+              id: sendActivity_HilcBJ
+              activity: |-
+                No te preocupes 😊🐾
+                Estoy aquí para ayudarte.
+                Cuéntame, ¿qué es lo que más te preocupa hoy sobre tu mascota?
+
+    - kind: EndConversation
+      id: W66JDJ
+
+inputType: {}
+outputType: {}

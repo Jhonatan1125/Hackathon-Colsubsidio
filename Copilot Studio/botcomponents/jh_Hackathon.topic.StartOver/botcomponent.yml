@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.StartOver
+  componenttype: 9
+  iscustomizable: 0
+  name: Volver a empezar
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

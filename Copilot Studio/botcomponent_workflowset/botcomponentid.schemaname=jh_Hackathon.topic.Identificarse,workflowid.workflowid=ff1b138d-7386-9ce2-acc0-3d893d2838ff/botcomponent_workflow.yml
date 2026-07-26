@@ -1,0 +1,4 @@
+botcomponent_workflow:
+  '@botcomponentid.schemaname': jh_Hackathon.topic.Identificarse
+  '@workflowid.workflowid': ff1b138d-7386-9ce2-acc0-3d893d2838ff
+  iscustomizable: 1

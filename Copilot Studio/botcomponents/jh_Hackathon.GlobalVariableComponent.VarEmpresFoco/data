@@ -1,0 +1,6 @@
+kind: Variable
+name: VarEmpresFoco
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: false
+initializationTimeoutInMilliseconds: 0

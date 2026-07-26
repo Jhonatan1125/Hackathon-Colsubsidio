@@ -1,0 +1,86 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Este tema se activa cuando el usuario saluda y expresa interés en proteger una mascota o solicita información relacionada con perros, gatos, seguros para mascotas, asistencia veterinaria o medicina prepagada para mascotas.
+
+  El objetivo es iniciar una conversación cálida y cercana para conocer la mascota y comprender la necesidad del afiliado.
+
+  No solicitar cédula, correo electrónico o teléfono durante los primeros mensajes.
+
+  Primero genera confianza y conoce a la mascota antes de recomendar productos.
+beginDialog:
+  kind: OnActivity
+  id: main
+  type: Invoke
+  actions:
+    - kind: SendActivity
+      id: sendActivity_nD4yw7
+      activity:
+        text:
+          - |-
+            ¡Hola! 👋😊
+            Soy SoterIA, tu acompañante virtual en seguros de Colsubsidio.
+
+            Estoy aquí para ayudarte a encontrar la protección que mejor se adapte a ti, tu familia, tu vehículo o incluso tu peludito.
+        speak:
+          - |-
+            ¡Hola! 👋😊
+            Soy SoterIA, tu acompañante virtual en seguros de Colsubsidio.
+
+            Estoy aquí para ayudarte a encontrar la protección que mejor se adapte a ti, tu familia, tu vehículo o incluso tu peludito.
+
+    - kind: Question
+      id: question_kV351H
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.tratamientoDatos
+      prompt:
+        text:
+          - Antes de comenzar, ¿aceptas nuestros Términos y Condiciones para poder brindarte una asesoría personalizada?
+        speak:
+          - Antes de comenzar, ¿aceptas nuestros Términos y Condiciones para poder brindarte una asesoría personalizada?
+
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Sí, acepto
+              displayName: Sí, acepto
+
+            - id: No acepto por ahora
+              displayName: No acepto por ahora
+
+    - kind: ConditionGroup
+      id: conditionGroup_6VMUfH
+      conditions:
+        - id: conditionItem_Impv64
+          condition: =Topic.tratamientoDatos = 'jh_Hackathon.topic.Greeting.main.question_kV351H'.'Sí, acepto'
+          actions:
+            - kind: BeginDialog
+              id: r225gu
+              dialog: jh_Hackathon.topic.Identificarse
+
+        - id: conditionItem_kH6bqr
+          condition: =Topic.tratamientoDatos = 'jh_Hackathon.topic.Greeting.main.question_kV351H'.'No acepto por ahora'
+          actions:
+            - kind: SendActivity
+              id: sendActivity_Mtw9nu
+              activity:
+                text:
+                  - |-
+                    No hay problema 😊
+                    ‌
+                    Podemos seguir hablando de los diferentes tipos de seguro que Colsubsidio tiene para tí. Sin embargo ten en cuenta que para validar datos personales o ponerte en contacto con un asesor, necesitaré tu autorización más adelante. 
+                    ‌
+                    Cuéntame ¿Cómo quieres que te llamé?
+                speak:
+                  - |-
+                    No hay problema 😊
+                    ‌
+                    Podemos seguir hablando de los diferentes tipos de seguro que Colsubsidio tiene para tí. Sin embargo ten en cuenta que para validar datos personales o ponerte en contacto con un asesor, necesitaré tu autorización más adelante.
+                    ‌
+                    Cuéntame ¿Cómo quieres que te llamé?
+
+    - kind: CancelAllDialogs
+      id: cancelAllDialogs_01At22

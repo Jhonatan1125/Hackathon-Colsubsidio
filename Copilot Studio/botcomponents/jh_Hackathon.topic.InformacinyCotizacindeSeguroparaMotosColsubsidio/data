@@ -1,0 +1,112 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - información seguro moto Colsubsidio
+      - cotización seguro para motos Colsubsidio
+      - quiero asegurar mi moto con Colsubsidio
+      - precio seguro de moto Colsubsidio
+      - cómo obtener seguro para motos en Colsubsidio
+      - detalles del seguro de motos Colsubsidio
+      - solicitar cotización de seguro moto Colsubsidio
+      - beneficios del seguro para motos en Colsubsidio
+      - qué cubre el seguro de moto Colsubsidio
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_6X41Uj
+      activity: |-
+        Rueda tranquilo, nosotros te protegemos. En Colsubsidio tenemos el seguro ideal para tu moto.
+        ¿Cómo puedo ayudarte hoy? Por favor selecciona una opción:
+
+    - kind: Question
+      id: Question_Oaeaq0
+      variable: Topic.MenuOption
+      prompt:
+        text:
+          - "Elige una de las siguientes alternativas:"
+          - ¿Qué deseas hacer hoy?
+
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          optionSetName: MenuOptionsMoto
+          items:
+            - id: incluye
+              displayName: ¿Qué incluye el seguro de moto?
+
+            - id: cotizar
+              displayName: Quiero cotizar el seguro para mi moto
+
+            - id: asistencia
+              displayName: Reportar un siniestro / Solicitar Grúa
+
+    - kind: ConditionGroup
+      id: ConditionGroup_8dxgbZ
+      conditions:
+        - id: ConditionItem_ECrckY
+          condition: =Topic.MenuOption = MenuOptionsMoto.incluye
+          actions:
+            - kind: SendActivity
+              id: SendActivity_DW3dxJ
+              activity: |-
+                Seguro de Moto Colsubsidio:
+                - Coberturas: Pérdida total y parcial por daños o accidentes, pérdida total y parcial por hurto, responsabilidad civil extracontractual.
+                - Beneficios: Servicio de grúa en caso de varada o accidente, asistencia jurídica y orientación telefónica.
+                Recuerda, todo el respaldo es directo y exclusivo de Colsubsidio.
+
+        - id: ConditionItem_7LPZ7H
+          condition: =Topic.MenuOption = MenuOptionsMoto.cotizar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_Z52EiX
+              activity: |-
+                Para cotizar tu Seguro de Moto Colsubsidio, ingresa tus datos personales y la información de tu moto (cilindraje, modelo, placa) en nuestro formulario. Recibirás una propuesta personalizada directamente en tu correo electrónico.
+                [Enlace al formulario de cotización: https://www.colsubsidio.com/seguros-moto]
+
+        - id: ConditionItem_wjpviM
+          condition: =Topic.MenuOption = MenuOptionsMoto.asistencia
+          actions:
+            - kind: SendActivity
+              id: SendActivity_zPTAp5
+              activity: |-
+                Para reportar un siniestro o solicitar grúa, comunícate a las líneas de atención de Colsubsidio:
+                - Bogotá: +57 601 745 79 00
+                - Línea nacional: 01 8000 947 900
+                Ten a la mano tu número de póliza, cédula y ubicación exacta. Recuerda, Colsubsidio te acompaña directamente en todo momento.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_qtsXA9
+          activity: No entendí tu selección. ¿Quieres volver al menú principal?
+
+    - kind: Question
+      id: Question_qK2Gcf
+      variable: Topic.InfoClear
+      prompt:
+        text:
+          - ¿La información fue clara?
+          - ¿Tienes alguna otra duda sobre tu motocicleta o deseas volver al menú principal?
+
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_pkKQad
+      conditions:
+        - id: ConditionItem_0DXvqA
+          condition: =Topic.InfoClear = true
+          actions:
+            - kind: SendActivity
+              id: SendActivity_koYwni
+              activity: ¡Gracias por confiar en Colsubsidio! Si necesitas más información o asistencia, estamos aquí para ayudarte. ¡Rueda seguro!
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_soXqYy
+          activity: ¿Deseas volver al menú principal o tienes otra consulta sobre tu seguro de moto Colsubsidio?
+
+inputType: {}
+outputType: {}

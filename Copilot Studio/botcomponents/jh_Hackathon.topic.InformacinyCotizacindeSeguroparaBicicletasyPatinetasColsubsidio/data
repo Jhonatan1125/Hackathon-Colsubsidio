@@ -1,0 +1,115 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - información seguro bicicletas Colsubsidio
+      - cotización seguro patinetas Colsubsidio
+      - quiero asegurar mi bicicleta con Colsubsidio
+      - precio seguro para patineta en Colsubsidio
+      - cómo funciona el seguro de bicicletas Colsubsidio
+      - beneficios del seguro de patinetas Colsubsidio
+      - solicitar cotización de seguro para bicicleta y patineta
+      - seguro para bicicletas y patinetas en Colsubsidio
+      - protección para mi bicicleta con Colsubsidio
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_p1PPn6
+      activity: |-
+        Muévete tranquilo por la ciudad de forma sostenible. En Colsubsidio protegemos tu bicicleta o patineta.
+        ¿En qué podemos ayudarte hoy?
+
+    - kind: Question
+      id: Question_y1q7ne
+      alwaysPrompt: true
+      variable: Topic.MenuOptions
+      prompt:
+        text:
+          - "Por favor, selecciona una opción:"
+          - ¿Qué te gustaría hacer hoy?
+
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          optionSetName: MenuOptionBicicleta
+          items:
+            - id: incluye
+              displayName: ¿Qué incluye el seguro?
+
+            - id: cotizar
+              displayName: Quiero cotizar mi seguro
+
+            - id: reportar
+              displayName: Reportar un robo o accidente
+
+    - kind: ConditionGroup
+      id: ConditionGroup_6D8ZZ0
+      conditions:
+        - id: ConditionItem_Xohl30
+          condition: =Topic.MenuOptions = MenuOptionBicicleta.incluye
+          actions:
+            - kind: SendActivity
+              id: SendActivity_I6R0tF
+              activity: |-
+                El Seguro para Bicicletas y Patinetas Colsubsidio incluye:
+                - Hurto calificado (robo con violencia).
+                - Responsabilidad civil extracontractual (daños materiales o lesiones a terceros mientras usas tu vehículo).
+                - Pérdida total por daños accidentales.
+                - Accidentes personales (cobertura médica para el conductor en caso de accidente).
+
+                Colsubsidio es el único proveedor y respaldo de este servicio.
+
+        - id: ConditionItem_AoHy0a
+          condition: =Topic.MenuOptions = MenuOptionBicicleta.cotizar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_zwhOpu
+              activity: |-
+                ¡Perfecto! Para recibir una cotización personalizada, por favor ingresa tus datos personales y las especificaciones de tu bicicleta o patineta (marca, valor, tipo) en el formulario oficial de Colsubsidio:
+                [Formulario de Cotización](https://www.colsubsidio.com/seguros-bicicletas-patinetas)
+
+                Recibirás tu propuesta directamente en tu correo electrónico. Recuerda que Colsubsidio es el único proveedor y respaldo de este servicio.
+
+        - id: ConditionItem_IAbl0f
+          condition: =Topic.MenuOptions = MenuOptionBicicleta.reportar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_ZQScgP
+              activity: |-
+                Si necesitas reportar un robo o accidente, comunícate de inmediato a las líneas de atención de Colsubsidio:
+                - Teléfono en Bogotá: +57 601 745 79 00
+                - Línea nacional: 01 8000 947 900
+
+                Ten a mano la denuncia policial en caso de hurto y tu número de cédula. Colsubsidio es el único proveedor y respaldo de este servicio.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_TCSFSW
+          activity: No entendí tu selección. Por favor, elige una de las opciones disponibles.
+
+    - kind: Question
+      id: Question_ZjM669
+      variable: Topic.InfoResolved
+      prompt: ¿La información resolvió tus dudas o deseas explorar otro tipo de seguros?
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_c5Vv1w
+      conditions:
+        - id: ConditionItem_w5IRc2
+          condition: =Topic.InfoResolved = true
+          actions:
+            - kind: SendActivity
+              id: SendActivity_WTG0bd
+              activity: ¡Gracias por confiar en Colsubsidio! Si necesitas más información, estamos aquí para ayudarte.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_YO5B5n
+          activity: ¿Te gustaría conocer otros seguros exclusivos de Colsubsidio? Puedes consultar nuestro portafolio en [www.colsubsidio.com/seguros](https://www.colsubsidio.com/seguros).
+
+inputType: {}
+outputType: {}

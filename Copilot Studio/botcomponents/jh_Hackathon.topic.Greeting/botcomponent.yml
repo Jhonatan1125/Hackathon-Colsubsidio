@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Greeting
+  componenttype: 9
+  description: Este tema se desencadena cuando el usuario saluda al agente.
+  iscustomizable: 0
+  name: Saludo
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

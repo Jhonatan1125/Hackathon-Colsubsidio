@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': 8ed86758-2e03-4187-8274-eca2c998a49e
+  dvtablesearch:
+    dvtablesearchid: b7dc3d65-5c2d-437a-98e5-0aa7e8d67de1
+  entitylogicalname: '[dbo].[Maestro_clientes]'
+  iscustomizable: 0
+  name: Maestro_clientes
+  statecode: 0
+  statuscode: 1

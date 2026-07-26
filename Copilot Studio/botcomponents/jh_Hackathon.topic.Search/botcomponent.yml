@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Search
+  componenttype: 9
+  description: Cree respuestas generativas a partir de orígenes de conocimiento.
+  iscustomizable: 0
+  name: Potenciar conversaciones
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

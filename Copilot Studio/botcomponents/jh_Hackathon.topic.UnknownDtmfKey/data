@@ -1,0 +1,8 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownDtmfKey
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_26sT88
+      activity: Lo siento. No lo he entendido. ¿Puede intentarlo de nuevo?

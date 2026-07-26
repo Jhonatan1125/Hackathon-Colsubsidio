@@ -1,0 +1,5 @@
+kind: IvrBotSettings
+latencySettings:
+  latencyMessage: Hmm... Espere un momento. Tengo que pensar en ello.
+
+voiceFont: {}

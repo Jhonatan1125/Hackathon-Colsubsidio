@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Silence
+  componenttype: 9
+  description: Se desencadena cuando ha transcurrido una duración sin que el usuario proporcione ninguna entrada de voz o DTMF. Para usar este desencadenador, la detección de silencio debe estar activada en la configuración del bot.
+  iscustomizable: 0
+  name: Detección de silencio
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 1
+  statuscode: 2

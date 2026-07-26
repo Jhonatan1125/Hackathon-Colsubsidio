@@ -1,0 +1,25 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnSilence
+  id: main
+  actions:
+    - kind: Question
+      id: question_mFD1X1
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt:
+        text:
+          - ¿Sigue ahí?
+        speak:
+          - ¿Sigue ahí?
+
+      entity: StringPrebuiltEntity
+      voiceInputSettings:
+        inputTimeoutResponse:
+          speak:
+            - No detectamos ninguna actividad por su parte. Vuelva a llamar cuando le resulte conveniente.
+
+    - kind: EndDialog
+      id: Rgrh4i

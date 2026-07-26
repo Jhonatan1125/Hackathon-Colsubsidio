@@ -1,0 +1,15 @@
+dvtablesearch:
+  '@dvtablesearchid': b7dc3d65-5c2d-437a-98e5-0aa7e8d67de1
+  connectionreference:
+    connectionreferencelogicalname: jh_Hackathon.cr.RaCGGslb
+  iscustomizable: 0
+  knowledgeconfig: >-
+    {
+      "$kind": "SqlFederatedTableSearchConfiguration",
+      "sqlServerName": "GENERICDATASETNAME",
+      "sqlDbName": "DEFAULT"
+    }
+  name: Maestro_clientes_dzsccx_8G9upmaOP5itRX
+  searchtype: 1
+  statecode: 0
+  statuscode: 1

@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Signin
+  componenttype: 9
+  description: Este tema del sistema se desencadena cuando el agente necesita iniciar sesión en el usuario o pedir al usuario que inicie sesión
+  iscustomizable: 0
+  name: 'Iniciar sesión '
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 1
+  statuscode: 2

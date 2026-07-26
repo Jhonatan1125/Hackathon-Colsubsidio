@@ -1,0 +1,52 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Este tema se activa cuando el usuario quiere identificarse como afiliado de Colsubsidio ingresando su número de afiliado o serie, o cuando menciona que ya tiene carnet o cuenta. 
+  También se activa cuando el usuario indica que es nuevo, que no tiene número de afiliado, que quiere registrarse o afiliarse por primera vez a Colsubsidio.
+  El objetivo es determinar si el usuario ya es afiliado o si es un usuario nuevo, para guiarlo por la ruta correcta: consulta de perfil existente o proceso de registro.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: Question
+      id: question_9FpAIr
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Global.CedulaCliente
+      prompt: Ingresa tu numero de cedula (Sin puntos ni comas)
+      entity: NumberPrebuiltEntity
+
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_Qv4nWY
+      input:
+        binding:
+          number: =Global.CedulaCliente
+
+      output:
+        binding:
+          agencias: Global.VarAgencias
+          categoria: Global.VarCategoria
+          ciudad_afiliado: Global.VarCiudadAfiliado
+          drogueria: Global.VarDrogueria
+          empresa_foco: Global.VarEmpresFoco
+          fecha_nacimiento: Global.VarFechaNacimiento
+          genero: Global.VarGenero
+          hoteles: Global.VarHoteles
+          nombre_completo: Global.VarNombreCompleto
+          piramide_nueva: Global.VarPiramideNueva
+          piscilago: Global.VarPiscilago
+          rango_edad: Global.VarRangoEdad
+          rango_salarial: Global.VarRangoSalarial
+          segmento_grupo_familiar: Global.VarSegmentoGrupoFamiliar
+          segmento_poblacional: Global.VarSegmentoPoblacional
+          serie: Global.VarCedula
+
+      flowId: ff1b138d-7386-9ce2-acc0-3d893d2838ff
+
+    - kind: SendActivity
+      id: sendActivity_FPMi5i
+      activity: Perfecto, {Global.VarNombreCompleto} ya te indentificaste
+
+inputType: {}
+outputType: {}

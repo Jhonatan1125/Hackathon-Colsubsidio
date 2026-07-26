@@ -1,0 +1,13 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.file.datosyespecificacionesdeseguros.md_FDz
+  componenttype: 14
+  description: Este fuente de conocimientos busca información contenida en datos y especificaciones de seguros.md
+  filedata:
+    '@mimetype': application/octet-stream
+    '#text': datos%20y%20especificaciones%20de%20seguros.md
+  iscustomizable: 0
+  name: datos y especificaciones de seguros.md
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

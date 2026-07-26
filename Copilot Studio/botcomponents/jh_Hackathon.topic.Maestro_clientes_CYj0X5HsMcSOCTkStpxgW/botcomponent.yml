@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Maestro_clientes_CYj0X5HsMcSOCTkStpxgW
+  componenttype: 16
+  description: 'Este fuente de conocimientos responde a las preguntas que se encuentran en los elementos de Azure SQL siguientes: Maestro_clientes'
+  iscustomizable: 0
+  name: Maestro_clientes
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

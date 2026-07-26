@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.SOAT
+  componenttype: 9
+  iscustomizable: 0
+  name: 'SOAT '
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

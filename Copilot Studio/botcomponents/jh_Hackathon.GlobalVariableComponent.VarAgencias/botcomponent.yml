@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.GlobalVariableComponent.VarAgencias
+  componenttype: 12
+  iscustomizable: 0
+  name: VarAgencias
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

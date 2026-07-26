@@ -1,0 +1,8 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnrecognizedSpeech
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_26sT9O
+      activity: Lo siento. No lo he entendido. ¿Puede intentarlo de nuevo?

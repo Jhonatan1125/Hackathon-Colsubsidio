@@ -1,0 +1,15 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.Escalate
+  componenttype: 9
+  description: >-
+    Este tema del sistema se desencadena cuando el usuario indica que desea hablar con un representante.
+
+    Puede configurar cómo gestionará el agente los escenarios de transferencia a un agente humano en la configuración del agente.
+
+    Si el agente no gestiona las escalaciones, se debe deshabilitar este tema.
+  iscustomizable: 0
+  name: Remitir a un superior
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.InformacinyCotizacindeSeguroparaCarrosColsubsidio
+  componenttype: 9
+  iscustomizable: 0
+  name: Información y Cotización de Seguro para Carros Colsubsidio
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

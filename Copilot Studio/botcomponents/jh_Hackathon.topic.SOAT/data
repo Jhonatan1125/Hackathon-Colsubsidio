@@ -1,0 +1,117 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName:
+    triggerQueries:
+      - soat information
+      - what is soat
+      - soat requirements
+      - how to get soat
+      - soat renewal
+      - soat cost
+      - buy soat online
+      - is my soat valid
+      - soat insurance details
+      - where can I purchase soat
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_2begJA
+      activity: ¡Hola! Soy tu agente virtual de Colsubsidio. Te ayudo con información sobre el Seguro Obligatorio de Accidentes de Tránsito (SOAT) y el Pack de Movilidad que ofrecemos en alianza con Seguros Mundial. ¿Te gustaría conocer más sobre el SOAT, comprarlo o reportar un siniestro?
+
+    - kind: Question
+      id: Question_2hlbQE
+      variable: Topic.SOATMenuOption
+      prompt:
+        text:
+          - ¿Qué deseas hacer?
+          - "Por favor, selecciona una opción:"
+
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          optionSetName: SOATMenuOptions
+          items:
+            - id: cobertura
+              displayName: ¿Qué incluye la cobertura?
+
+            - id: comprar
+              displayName: Comprar / Cotizar mi SOAT
+
+            - id: reclamar
+              displayName: Reportar un siniestro / Reclamación
+
+    - kind: ConditionGroup
+      id: ConditionGroup_ueyTuF
+      conditions:
+        - id: ConditionItem_qvmXnK
+          condition: =Topic.SOATMenuOption = SOATMenuOptions.cobertura
+          actions:
+            - kind: SendActivity
+              id: SendActivity_cMzpN8
+              activity: |-
+                El Pack de Movilidad de Colsubsidio incluye:
+                - SOAT obligatorio para ti y tu vehículo.
+                - Cobertura por Accidentes personales.
+                - Daños materiales a terceros (ampara el vehículo en choques simples).
+
+                Muévete con respaldo en cada kilómetro.
+
+        - id: ConditionItem_zuf68s
+          condition: =Topic.SOATMenuOption = SOATMenuOptions.comprar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_vET8cq
+              activity: |-
+                Para comprar o cotizar tu SOAT:
+                1. Regístrate en la página de Seguros Mundial con tus datos personales y del vehículo.
+                2. Verifica el plan diseñado y que los datos de tu carro/moto sean correctos.
+                3. Paga con tarjeta de crédito o débito a través de la pasarela autorizada. Todo el proceso es 100% en línea.
+
+                [Compra tu SOAT aquí](https://segurosmundial.com/soat-colsubsidio)
+
+        - id: ConditionItem_gB9tVG
+          condition: =Topic.SOATMenuOption = SOATMenuOptions.reclamar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_TO4gWC
+              activity: |-
+                Para reportar un siniestro o hacer una reclamación, comunícate directamente con Seguros Mundial:
+                - Teléfono en Bogotá: (601) 327 4712
+                - Línea Nacional: 01 8000 111935
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_6VYFMt
+          activity: No entendí tu selección. ¿Podrías elegir una de las opciones del menú?
+
+    - kind: Question
+      id: Question_q4E5mf
+      variable: Topic.MoreHelp
+      prompt:
+        text:
+          - ¿Necesitas ayuda con algún otro seguro para vehículos o tu duda fue resuelta?
+          - ¿Te puedo ayudar con algo más relacionado con seguros para tu vehículo?
+
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_SthvMe
+      conditions:
+        - id: ConditionItem_DJZj1l
+          condition: =Topic.MoreHelp = true
+          actions:
+            - kind: SendActivity
+              id: SendActivity_jfOHV8
+              activity: ¡Por supuesto! Cuéntame qué necesitas y te ayudo.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_LCtMCH
+          activity: ¡Gracias por confiar en Colsubsidio! Muévete con respaldo en cada kilómetro.
+
+inputType: {}
+outputType: {}

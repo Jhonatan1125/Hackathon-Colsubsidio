@@ -1,0 +1,29 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Este tema se activa cuando el afiliado agradece la información recibida o expresa satisfacción con la atención.
+
+  El objetivo es responder de manera amable, reforzar la disponibilidad de ayuda y mantener una experiencia cercana y positiva.
+
+  No presiones una venta.
+  No solicites datos personales.
+  No intentes escalar a un asesor en esta etapa.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Agradecimiento
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - gracias
+      - gracias a ti
+      - gracias a usted
+      - muchas gracias
+      - grcs
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_9iz6v7
+      activity: |-
+        ¡Con mucho gusto! 😊
+        Ha sido un placer ayudarte.
+        Si necesitas algo más, aquí estaré para acompañarte. 🛡️

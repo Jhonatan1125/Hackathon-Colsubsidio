@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.ThankYou
+  componenttype: 9
+  description: Este tema se desencadena cuando el usuario da las gracias.
+  iscustomizable: 0
+  name: Agradecimiento
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

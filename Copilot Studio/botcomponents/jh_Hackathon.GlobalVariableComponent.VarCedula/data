@@ -1,0 +1,6 @@
+kind: Variable
+name: VarCedula
+scope: User
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: false
+initializationTimeoutInMilliseconds: 0

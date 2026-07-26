@@ -1,0 +1,6 @@
+kind: Variable
+name: VarSegmentoPoblacional
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: false
+initializationTimeoutInMilliseconds: 0

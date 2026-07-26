@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.UnknownDtmfKey
+  componenttype: 9
+  description: Se desencadena cuando la entrada del teclado de marcación de un usuario no coincide con ninguna configuración del teclado de marcación existente. Antes de desencadenarse, se tienen en cuenta las configuraciones globales del teclado de marcación DTMF.
+  iscustomizable: 0
+  name: Pulsación desconocida del teclado de marcación
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 1
+  statuscode: 2

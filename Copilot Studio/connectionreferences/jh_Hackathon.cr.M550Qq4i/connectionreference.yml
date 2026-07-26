@@ -1,0 +1,8 @@
+connectionreference:
+  '@connectionreferencelogicalname': jh_Hackathon.cr.M550Qq4i
+  connectionreferencedisplayname: shared_sql-d9ebbe7c84be4579a7a026d962e2aec0
+  connectorid: /providers/Microsoft.PowerApps/apis/shared_sql
+  iscustomizable: 0
+  promptingbehavior: 0
+  statecode: 0
+  statuscode: 1

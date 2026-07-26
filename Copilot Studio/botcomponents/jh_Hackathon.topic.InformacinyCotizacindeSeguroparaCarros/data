@@ -1,0 +1,221 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName:
+    triggerQueries:
+      - información de seguro para carros
+      - cotización de seguro de auto
+      - quiero asegurar mi carro
+      - precio del seguro para autos
+      - cómo obtener un seguro para mi coche
+      - cuánto cuesta el seguro de carro
+      - necesito información sobre seguros automotrices
+      - solicitar cotización de seguro vehicular
+      - asegurar mi vehículo
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_fCyZbp
+      activity: Tu carro necesita más que un buen conductor. ¿Estás buscando proteger tu vehículo con un seguro todo riesgo? ¡Estoy aquí para ayudarte!
+
+    - kind: Question
+      id: Question_b4Ivsf
+      variable: Topic.MenuOption
+      prompt:
+        text:
+          - ¿Cómo puedo ayudarte hoy?
+          - "Por favor, selecciona una opción:"
+
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          optionSetName: SeguroMenuOptions
+          items:
+            - id: incluye
+              displayName: ¿Qué incluye el seguro?
+
+            - id: cotizar
+              displayName: Quiero cotizar mi seguro
+
+            - id: siniestro
+              displayName: Reportar un siniestro / Asistencia
+
+    - kind: ConditionGroup
+      id: ConditionGroup_0zhYzf
+      conditions:
+        - id: ConditionItem_UVq9mG
+          condition: =Topic.MenuOption = SeguroMenuOptions.incluye
+          actions:
+            - kind: SendActivity
+              id: SendActivity_G8wr19
+              activity: |-
+                El Seguro de Carro (todo riesgo) de Colsubsidio incluye:
+                - Pérdida total por hurto o daños.
+                - Responsabilidad civil (daño a terceros).
+                - Daños a bienes de terceros.
+
+                Beneficios de asistencia:
+                - Servicio de grúa.
+                - Conductor elegido.
+                - Amparo patrimonial.
+
+                Además, puedes acceder a coberturas adicionales según la aseguradora. Gracias a la alianza de Colsubsidio, recibirás varias opciones competitivas del mercado.
+
+        - id: ConditionItem_qgKEga
+          condition: =Topic.MenuOption = SeguroMenuOptions.cotizar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_MT7rdg
+              activity: |-
+                Para cotizar tu seguro, ingresa tus datos personales y la información de tu vehículo. Colsubsidio te enviará diferentes planes por correo electrónico para que elijas la mejor opción según tus necesidades y presupuesto.
+
+                Puedes iniciar tu cotización aquí: [Enlace de Cotización](https://www.colsubsidio.com/seguros/vehiculos)
+
+                El pago se realiza a través de los canales autorizados por la aseguradora.
+
+        - id: ConditionItem_7zK8tf
+          condition: =Topic.MenuOption = SeguroMenuOptions.siniestro
+          actions:
+            - kind: Question
+              id: Question_jx7SzA
+              variable: Topic.Aseguradora
+              prompt:
+                text:
+                  - ¿Con qué aseguradora tienes tu póliza?
+                  - "Por favor, selecciona tu aseguradora:"
+
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  optionSetName: AseguradoraOptions
+                  items:
+                    - id: sura
+                      displayName: Sura
+
+                    - id: allianz
+                      displayName: Allianz
+
+                    - id: liberty
+                      displayName: Liberty
+
+                    - id: bolivar
+                      displayName: Seguros Bolívar
+
+                    - id: axa
+                      displayName: AXA Colpatria
+
+                    - id: mapfre
+                      displayName: Mapfre
+
+                    - id: equidad
+                      displayName: Equidad
+
+            - kind: ConditionGroup
+              id: ConditionGroup_cMbbHT
+              conditions:
+                - id: ConditionItem_w8Yg5Y
+                  condition: =Topic.Aseguradora = AseguradoraOptions.sura
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_oWtLLU
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con Sura, comunícate a:
+                        - Línea nacional: 01 8000 518888
+                        - Bogotá: (601) 437 8888
+
+                - id: ConditionItem_suamEM
+                  condition: =Topic.Aseguradora = AseguradoraOptions.allianz
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_efZrNI
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con Allianz, comunícate a:
+                        - Línea nacional: 01 8000 513500
+                        - Bogotá: (601) 594 1133
+
+                - id: ConditionItem_BBfqVP
+                  condition: =Topic.Aseguradora = AseguradoraOptions.liberty
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_UCbWHD
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con Liberty, comunícate a:
+                        - Línea nacional: 01 8000 113390
+                        - Bogotá: (601) 307 7050
+
+                - id: ConditionItem_IKlvkB
+                  condition: =Topic.Aseguradora = AseguradoraOptions.bolivar
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_XBHm5e
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con Seguros Bolívar, comunícate a:
+                        - Línea nacional: 01 8000 123322
+                        - Celular: #322
+
+                - id: ConditionItem_jCRh0J
+                  condition: =Topic.Aseguradora = AseguradoraOptions.axa
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_A2kzkE
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con AXA Colpatria, comunícate a:
+                        - Línea nacional: 01 8000 512620
+                        - Bogotá: (601) 423 5757
+
+                - id: ConditionItem_3xKKUM
+                  condition: =Topic.Aseguradora = AseguradoraOptions.mapfre
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_2Z0Ue3
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con Mapfre, comunícate a:
+                        - Línea nacional: 01 8000 519991
+                        - Bogotá: (601) 307 7024
+
+                - id: ConditionItem_kjcaVP
+                  condition: =Topic.Aseguradora = AseguradoraOptions.equidad
+                  actions:
+                    - kind: SendActivity
+                      id: SendActivity_AFz6d4
+                      activity: |-
+                        Para reportar un siniestro o solicitar asistencia con Equidad, comunícate a:
+                        - Línea nacional: 01 8000 919538
+                        - Bogotá: (601) 746 0392
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_nxps2w
+          activity: No se ha seleccionado una opción válida. ¿Deseas regresar al menú principal de seguros?
+
+    - kind: Question
+      id: Question_PniX6R
+      variable: Topic.InfoUtil
+      prompt:
+        text:
+          - ¿La información fue útil para ti?
+          - ¿Deseas regresar al menú principal de seguros?
+
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_P2rpjf
+      conditions:
+        - id: ConditionItem_cbq1Me
+          condition: =Topic.InfoUtil = true
+          actions:
+            - kind: SendActivity
+              id: SendActivity_rcDl1S
+              activity: ¡Gracias por usar el servicio de seguros de Colsubsidio! Si tienes más preguntas, estoy aquí para ayudarte.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_BCVUSq
+          activity: Puedes regresar al menú principal de seguros en cualquier momento. ¿En qué más puedo ayudarte?
+
+inputType: {}
+outputType: {}

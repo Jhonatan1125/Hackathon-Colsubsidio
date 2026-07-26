@@ -1,0 +1,13 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.EndofConversation
+  componenttype: 9
+  description: >-
+    Este tema del sistema solo se desencadena mediante una acción de redireccionamiento
+
+    y guía al usuario por el proceso de valoración de su conversación con el agente.
+  iscustomizable: 0
+  name: Fin de la conversación
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

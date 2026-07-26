@@ -1,0 +1,8 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.settings.Ivr
+  componenttype: 18
+  iscustomizable: 0
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

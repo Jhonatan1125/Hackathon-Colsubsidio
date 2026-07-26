@@ -1,0 +1,13 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.file.BasedeConocimiento-SegurosColsubsidio.md_ArA
+  componenttype: 14
+  description: Este fuente de conocimientos busca información contenida en Base de Conocimiento - Seguros Colsubsidio.md
+  filedata:
+    '@mimetype': application/octet-stream
+    '#text': Base%20de%20Conocimiento%20-%20Seguros%20Colsubsidio.md
+  iscustomizable: 0
+  name: Base de Conocimiento - Seguros Colsubsidio.md
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

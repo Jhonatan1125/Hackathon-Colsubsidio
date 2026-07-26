@@ -1,0 +1,11 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.httpswwwcolsubsidiocomseguros_PctK1vOUB2U6cYKM4Y4VK
+  category: Authoritative
+  componenttype: 16
+  description: Este fuente de conocimientos busca información en la web que se ha encontrado en el sitio web https://www.colsubsidio.com/seguros
+  iscustomizable: 0
+  name: https://www.colsubsidio.com/seguros
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

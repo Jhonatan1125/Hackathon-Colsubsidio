@@ -1,0 +1,123 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - información de seguro para carros Colsubsidio
+      - cotización de seguro de auto Colsubsidio
+      - quiero asegurar mi carro con Colsubsidio
+      - precio del seguro para autos Colsubsidio
+      - cómo obtener un seguro de carro en Colsubsidio
+      - detalles del seguro automotriz Colsubsidio
+      - solicitar cotización de seguro vehicular Colsubsidio
+      - beneficios del seguro para carros en Colsubsidio
+      - opciones de seguros para autos con Colsubsidio
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_aGXEQG
+      activity: |-
+        Tu carro necesita más que un buen conductor. En Colsubsidio tenemos la protección ideal para ti.
+        ¿Cómo puedo ayudarte hoy?
+
+    - kind: Question
+      id: Question_FAQwSt
+      variable: Topic.MenuOption
+      prompt:
+        text:
+          - "Por favor, selecciona una opción:"
+          - ¿Qué deseas hacer hoy?
+
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          optionSetName: MenuOptionCarro
+          items:
+            - id: incluye
+              displayName: ¿Qué incluye nuestro seguro?
+
+            - id: cotizar
+              displayName: Quiero cotizar mi seguro
+
+            - id: asistencia
+              displayName: Reportar un siniestro / Solicitar Asistencia
+
+    - kind: ConditionGroup
+      id: ConditionGroup_Qgbegy
+      conditions:
+        - id: ConditionItem_7El4p3
+          condition: =Topic.MenuOption = MenuOptionCarro.incluye
+          actions:
+            - kind: SendActivity
+              id: SendActivity_fzr3Qy
+              activity: |-
+                El Seguro de Carro Colsubsidio te protege con:
+                - Pérdida total por hurto o daños.
+                - Responsabilidad civil (daños a terceros).
+                - Daños a bienes de terceros.
+
+                Beneficios de asistencia incluidos:
+                - Servicio de grúa.
+                - Conductor elegido.
+                - Amparo patrimonial.
+
+                Toda la gestión y respaldo es directamente por Colsubsidio.
+
+        - id: ConditionItem_iGZlhB
+          condition: =Topic.MenuOption = MenuOptionCarro.cotizar
+          actions:
+            - kind: SendActivity
+              id: SendActivity_icXlXz
+              activity: |-
+                Para cotizar tu Seguro de Carro Colsubsidio, por favor ingresa tus datos personales y los de tu vehículo en nuestro formulario. Recibirás una propuesta personalizada en tu correo electrónico.
+
+                [Formulario de cotización](https://www.colsubsidio.com/seguros/vehiculos)
+
+                El pago se realiza a través de los canales autorizados y seguros indicados en la cotización.
+
+        - id: ConditionItem_XzDJ8P
+          condition: =Topic.MenuOption = MenuOptionCarro.asistencia
+          actions:
+            - kind: SendActivity
+              id: SendActivity_DxizgH
+              activity: |-
+                Si necesitas reportar un siniestro o solicitar asistencia, comunícate a nuestras líneas de atención:
+                - Teléfono en Bogotá: +57 601 745 79 00
+                - Línea nacional: 01 8000 947 900
+
+                Ten a la mano tu número de póliza o documento de identidad. Todo el respaldo es directo de Colsubsidio.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_BkEPHI
+          activity: No he entendido tu selección. ¿Deseas volver al menú principal?
+
+    - kind: Question
+      id: Question_semaOM
+      variable: Topic.InfoUtil
+      prompt:
+        text:
+          - ¿La información fue útil para ti?
+          - ¿Tienes alguna otra duda sobre el seguro de carro o deseas volver al menú principal?
+
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_vT8RVB
+      conditions:
+        - id: ConditionItem_PHieh0
+          condition: =Topic.InfoUtil = true
+          actions:
+            - kind: SendActivity
+              id: SendActivity_T3Rqzd
+              activity: ¡Gracias por confiar en Colsubsidio! Si necesitas más información o deseas cotizar tu seguro, estoy aquí para ayudarte.
+
+      elseActions:
+        - kind: SendActivity
+          id: SendActivity_zZeIjx
+          activity: ¿Quieres volver al menú principal o tienes otra consulta sobre el Seguro de Carro Colsubsidio?
+
+inputType: {}
+outputType: {}

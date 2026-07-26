@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.UnrecognizedSpeech
+  componenttype: 9
+  description: Se activa cuando no se puede reconocer la entrada de voz del usuario.
+  iscustomizable: 0
+  name: Voz no reconocida
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 1
+  statuscode: 2

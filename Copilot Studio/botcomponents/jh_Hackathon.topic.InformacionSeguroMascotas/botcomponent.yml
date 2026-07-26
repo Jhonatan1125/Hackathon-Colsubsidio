@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.InformacionSeguroMascotas
+  componenttype: 9
+  iscustomizable: 0
+  name: Informacion Seguro Mascotas
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

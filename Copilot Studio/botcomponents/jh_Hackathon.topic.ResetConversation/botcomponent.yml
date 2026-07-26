@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.ResetConversation
+  componenttype: 9
+  iscustomizable: 0
+  name: Restablecer conversación
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

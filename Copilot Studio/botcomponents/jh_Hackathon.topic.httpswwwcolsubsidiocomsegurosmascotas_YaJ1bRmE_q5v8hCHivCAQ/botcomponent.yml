@@ -1,0 +1,11 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.httpswwwcolsubsidiocomsegurosmascotas_YaJ1bRmE_q5v8hCHivCAQ
+  category: Authoritative
+  componenttype: 16
+  description: Este fuente de conocimientos busca información en la web que se ha encontrado en el sitio web https://www.colsubsidio.com/seguros/mascotas
+  iscustomizable: 0
+  name: https://www.colsubsidio.com/seguros/mascotas
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 0
+  statuscode: 1

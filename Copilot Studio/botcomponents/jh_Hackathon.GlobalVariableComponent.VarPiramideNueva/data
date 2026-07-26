@@ -1,0 +1,6 @@
+kind: Variable
+name: VarPiramideNueva
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: false
+initializationTimeoutInMilliseconds: 0

@@ -1,0 +1,17 @@
+ImportExportXml:
+  '@version': 9.2.26071.153
+  '@SolutionPackageVersion': 9.2
+  '@languagecode': 3082
+  '@generatedBy': CrmLive
+  '@xmlns:xsi': http://www.w3.org/2001/XMLSchema-instance
+  SolutionManifest:
+    UniqueName: Hackathon
+    LocalizedNames:
+      LocalizedName:
+        '@description': Hackathon
+        '@languagecode': 3082
+    Descriptions: 
+    Version: 1.0.0.2
+    Managed: 0
+    Publisher:
+      UniqueName: JhonatanG

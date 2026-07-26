@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': jh_Hackathon.topic.AnsweringMachineDetection
+  componenttype: 9
+  description: Esto se desencadenará cuando el agente detecte que está interactuando con un contestador automático.
+  iscustomizable: 0
+  name: Detección de contestador automático
+  parentbotid:
+    schemaname: jh_Hackathon
+  statecode: 1
+  statuscode: 2

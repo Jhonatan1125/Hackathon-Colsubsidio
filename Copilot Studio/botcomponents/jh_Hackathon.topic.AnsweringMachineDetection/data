@@ -1,0 +1,15 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnAnsweringMachineDetected
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_C8pKOo
+      activity:
+        text:
+          - Hola, {System.Bot.Name} está intentando ponerse en contacto con usted.
+        speak:
+          - Hola, {System.Bot.Name} está intentando ponerse en contacto con usted.
+
+    - kind: EndConversation
+      id: Rgrz4i

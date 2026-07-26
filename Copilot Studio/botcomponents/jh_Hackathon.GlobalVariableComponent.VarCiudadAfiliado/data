@@ -1,0 +1,6 @@
+kind: Variable
+name: VarCiudadAfiliado
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: false
+initializationTimeoutInMilliseconds: 0
