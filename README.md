@@ -1,19 +1,19 @@
-🤖 SoterIA
+🤖 SoterIA.
 SoterIA (del griego Soteria: confianza/salvación, e IA: Inteligencia Artificial) es una solución integral orientada a la venta consultiva automatizada y la colocación de productos financieros. Este repositorio documenta la arquitectura de dos proyectos interconectados que centralizan la atención al cliente, la perfilación de usuarios y la generación de ofertas hiperpersonalizadas a través de múltiples canales.
 
-📌 1. NOMBRE DEL PROYECTO Y LINK DE ACCESO.
-SoterIA.
-https://jhonatan1125.github.io/colsubsidio-seguros/
+📌 1. NOMBRE DEL PROYECTO.
+SoterIA
+
 Plataforma unificada de seguros y servicios financieros impulsada por IA Generativa y Machine Learning. Proyecto destacado originado en la Hackathon 30X.
 
-⚠️ 2. EL PROBLEMA
+⚠️ 2. EL PROBLEMA.
 Las entidades financieras y aseguradoras enfrentan un cuello de botella crítico en sus embudos de conversión debido a la dependencia de procesos manuales y agentes humanos:
 
 📉 En Seguros: La venta cruzada y consultiva de pólizas (carros, motos, patinetas/bicicletas y mascotas) carece de escalabilidad. Al no operar 24/7, se pierde el momentum del cliente y la oportunidad de cierre.
 
 📉 En Créditos: Las campañas de colocación de créditos suelen ser invasivas y genéricas (spam). No analizan a profundidad la capacidad o necesidad real del cliente, lo que resulta en altísimas tasas de rechazo y fricción en los canales de mensajería directa como WhatsApp.
 
-💡 3. SOLUCIÓN Y ARQUITECTURA
+💡 3. SOLUCIÓN Y ARQUITECTURA.
 Desarrollamos una arquitectura de dos módulos integrados de alta tecnología, respaldados por bases de datos en Microsoft Azure y un ecosistema escalable dividido en microservicios/repositorios:
 
 🛡️ Módulo 1: SoterIA (Agente Conversacional en Copilot Studio)
@@ -89,3 +89,27 @@ Capacidad de Cómputo (Cloud Scaling): Recursos adicionales y créditos en Azure
 Aprobaciones Oficiales (WhatsApp API): Verificación de negocio, aprobación de plantillas HSM y aumento de límites de mensajería en la API oficial de WhatsApp para evitar bloqueos del wrapper.
 
 Feedback de Datos Históricos: Acceso a mayores volúmenes de datos transaccionales reales para refinar las redes neuronales y algoritmos de predicción crediticia, disminuyendo el margen de error.
+
+📱 8. CÓMO USAR LA APLICACIÓN (PASO A PASO)
+Para interactuar con SoterIA y explorar de primera mano los flujos de atención y ventas, sigue estas instrucciones:
+
+Accede a la plataforma web:
+Ingresa a nuestro entorno de pruebas haciendo clic en el siguiente enlace:
+🔗 Portal SoterIA - Seguros Colsubsidio
+
+Inicia la conversación:
+Una vez en la página, dirígete a la esquina inferior derecha y selecciona el botón flotante de chat (icono rojo de mensaje).
+
+Interactúa con el asistente:
+Se desplegará la ventana del Asistente Colsubsidio (SoterIA). Acepta los términos y condiciones iniciales para habilitar el perfilamiento inteligente.
+
+Explora los servicios:
+Utiliza el chat para realizar todo el flujo de consultas. El agente está capacitado para procesar solicitudes sobre:
+
+🚗 Seguros de Carro o Moto (Todo Riesgo).
+
+🚲 Seguros de Patinetas y Bicicletas.
+
+🐶 Seguros para Mascotas.
+
+💳 Información, consulta y perfilamiento de créditos hiperpersonalizados.
